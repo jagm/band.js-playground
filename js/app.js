@@ -1,36 +1,31 @@
-$(function() {
+$(function () {
 
     var music = new BandJS();
-    music.setTimeSignature(3,4);
+    music.setTimeSignature(3, 4);
     music.setTempo(120);
 
-    var piano = music.createInstrument();
+    var rightHand = music.createInstrument('square');
 
-    piano.note('quarter', 'G4');
-    piano.note('quarter', 'E4');
-    piano.note('quarter', 'E4');
+    rightHand.note('quarter', 'G4')
+        .note('quarter', 'E4')
+        .note('quarter', 'E4')
+        .note('quarter', 'F4')
+        .note('quarter', 'D4')
+        .note('quarter', 'D4')
+        .note('eighth', 'C4')
+        .note('eighth', 'E4')
+        .note('half', 'G4')
+        .note('quarter', 'G4')
+        .note('quarter', 'E4')
+        .note('quarter', 'E4')
+        .note('quarter', 'F4')
+        .note('quarter', 'D4')
+        .note('quarter', 'D4')
+        .note('eighth', 'C4')
+        .note('eighth', 'E4')
+        .note('half', 'C4')
+        .finish();
 
-    piano.note('quarter', 'F4');
-    piano.note('quarter', 'D4');
-    piano.note('quarter', 'D4');
-
-    piano.note('eighth', 'C4');
-    piano.note('eighth', 'E4');
-    piano.note('half', 'G4');
-
-    piano.note('quarter', 'G4');
-    piano.note('quarter', 'E4');
-    piano.note('quarter', 'E4');
-
-    piano.note('quarter', 'F4');
-    piano.note('quarter', 'D4');
-    piano.note('quarter', 'D4');
-
-    piano.note('eighth', 'C4');
-    piano.note('eighth', 'E4');
-    piano.note('half', 'C4');
-
-    piano.finish();
     music.end();
 
     music.play();
