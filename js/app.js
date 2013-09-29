@@ -1,33 +1,29 @@
 $(function () {
 
+    var wlazlKotek = {
+        timeSignature: [3, 4],
+        tempo: 120,
+        instruments: {
+            rightHand: {
+                name: 'square',
+                pack: 'oscillators'
+            }
+        },
+        notes: {
+            rightHand: [
+                'quarter|G4', 'quarter|E4', 'quarter|E4',
+                'quarter|F4', 'quarter|D4', 'quarter|D4',
+                'eighth|C4', 'eighth|E4', 'half|G4',
+                'quarter|G4', 'quarter|E4', 'quarter|E4',
+                'quarter|F4', 'quarter|D4', 'quarter|D4',
+                'eighth|C4', 'eighth|E4', 'half|C4'
+            ]
+        }
+    };
+
     var music = new BandJS();
-    music.setTimeSignature(3, 4);
-    music.setTempo(120);
-
-    var rightHand = music.createInstrument('square');
-
-    rightHand.note('quarter', 'G4')
-        .note('quarter', 'E4')
-        .note('quarter', 'E4')
-        .note('quarter', 'F4')
-        .note('quarter', 'D4')
-        .note('quarter', 'D4')
-        .note('eighth', 'C4')
-        .note('eighth', 'E4')
-        .note('half', 'G4')
-        .note('quarter', 'G4')
-        .note('quarter', 'E4')
-        .note('quarter', 'E4')
-        .note('quarter', 'F4')
-        .note('quarter', 'D4')
-        .note('quarter', 'D4')
-        .note('eighth', 'C4')
-        .note('eighth', 'E4')
-        .note('half', 'C4')
-        .finish();
-
+    music.load(wlazlKotek);
     music.end();
-
     music.play();
 
 });
